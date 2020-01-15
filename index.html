@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="st.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="calc ">
+        <form>
+            <input type="text" name="text" id="screen" value=0>
+            <br>
+            <br>
+            <input type="button" value="C" onclick="clr()">
+            <br>
+            <br>
+            <div class="buttonarea">
+                <input type="button" value="7" onclick="calinput('7')">
+                <input type="button" value="8" onclick="calinput('8')">
+                <input type="button" value="9" onclick="calinput('9')">
+                <input type="button" value="+" onclick="calinput('+')">
+                <br>
+                <input type="button" value="4" onclick="calinput('4')">
+                <input type="button" value="5" onclick="calinput('5')">
+                <input type="button" value="6" onclick="calinput('6')">
+                <input type="button" value="-" onclick="calinput('-')">
+                <br>
+                <input type="button" value="1" onclick="calinput('1')">
+                <input type="button" value="2" onclick="calinput('2')">
+                <input type="button" value="3" onclick="calinput('3')">
+                <input type="button" value="/" onclick="calinput('/')">
+                <br>
+                <input type="button" value="0" onclick="calinput('0')">
+                <input type="button" value="." onclick="calinput('.')">
+                <input type="button" value="=" onclick="cal()">
+                <input type="button" value="X" onclick="calinput('*')">
+            </div>
+
+        </form>
+
+        
+    </div>
+    <script>
+        let s=""
+        function calinput(str)
+        {
+            s=s+str;
+            document.getElementById("screen").value=s;
+        }
+        function cal()
+        {
+            let ans=eval(s)
+            s=ans
+            document.getElementById("screen").value=ans;
+        }
+        function clr()
+        {
+            s=""
+            document.getElementById("screen").value=s;
+        }
+    </script>
+</body>
